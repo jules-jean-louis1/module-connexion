@@ -1,13 +1,12 @@
-<!--  Page d'acceuil -->
 
 
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles_index.css">
-    <title>presentation - acceuil</title>
+    <link rel="stylesheet" href="styles_inscritpion.css">
+    <title>co.com</title>
 </head>
 <body>
     <header>
@@ -45,15 +44,28 @@
             </div>
         </div>
     </header>
-    <main class="js-warp-hide bg-gray-dark-mktg d-flex flex-auto flex-column overflow-hidden position-relative">
-        <section class="main-container_s1">
-            <div class="snow">
-            </div>
-            <!-- <img src="images/hero-glow.svg" alt="Glowing" class="js-warp-hide position-absolute overflow-hidden home-hero-glow events-none"> -->
-        </section>
-    </main>
-    <footer>
-
-    </footer>
+        <main>
+            <section class="s1_connect">
+                <div class="module_connect">
+                    <div class="module_warpper">
+                        <div class="module_container">  <!-- Zone de connection -->
+                            <form action="" method="post" class="form_">
+                                <div class="text_form">
+                                    <h2>Bienvenue sur Connect.co</h2>
+                                    <h2>Inscrivez-vous</h2>
+                                </div>
+                                <input type="text" name="fname" id="log" placeholder="Prénom">
+                                <input type="text" name="lname" id="log" placeholder="Nom">
+                                <input type="text" name="username" id="log" placeholder="Nom d'utilisateur">
+                                <input type="text" name="password" id="log" placeholder="Mot de passe">
+                                <input type="submit" value="S'inscrire" id="submit" name="envoyer">
+                                
+                            </form>
+                            <p id="text_membre">Déjà membre ? <a href="">Se connecter</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 </body>
 </html>

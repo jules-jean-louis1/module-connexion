@@ -11,7 +11,13 @@ ul {
 }
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #6e7e83;
+/*     background-color: rgb(4, 13, 33); */
+	background-image: url(images/Sans-titre-1-copie.png);
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 /***#############################    HEADER     ####################################***/
 /*#####################################################################################/
@@ -134,19 +140,98 @@ body {
 .color_btn ul {
     display: flex;
     gap: 6px;
-  }
-  .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' #fff,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48
-  }
-  .container_logo {
+}
+.container_logo {
     display: flex;
     align-items: center;
     gap: 10px;
-  }
+}
+.container_logo img {
+	width: 50px;
+}
+.main-container_s1{
+	height: 100vh;
+}
+.snow{
+	height: 100vh;
+}
+.snow, .snow:after, .snow:before {
+	content: "";
+	position: absolute;
+	top: 40px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-image: radial-gradient(4px 4px at 100px 50px, #fff, transparent);
+	background-image: radial-gradient(6px 6px at 100px 50px, #fff, transparent);
+	background-image: radial-gradient(3px 3px at 400px 250px, #fff, transparent);
+	background-image: radial-gradient(4px 4px at 400px 350px, #fff, transparent);
+	background-image: radial-gradient(6px 6px at 500px 100px, #fff, transparent);
+	background-image: radial-gradient(3px 3px at 50px 200px, #fff, transparent);
+	background-image: radial-gradient(4px 4px at 150px 300px, #fff, transparent);
+	background-image: radial-gradient(6px 6px at 250px 50px, #fff, transparent);
+	background-image: radial-gradient(3px 3px at 350px 50px, #fff, transparent);
+	background-size: 650px 650px;
+
+	animation: snowAnim 3s linear;
+	animation-iteration-count: infinite;
+}
+.snow:after {
+	margin-left: -250px;
+	opacity: 0.5;
+	filter: blur(2px);
+	animation-direction: reverse;
+	animation-duration: 6s;
+}
+.snow:before {
+	margin-left: -350px;
+	opacity: 0.7;
+	filter: blur(1px);
+	animation-direction: reverse;
+	animation-duration: 9s;
+}
+@keyframes snowAnim {
+	form{
+		transform: translateY(0);
+	}
+	to{
+		transform: translateY(-650px);
+	}
+}
+.d-flex {
+    display: flex !important;
+}
+.overflow-hidden {
+    overflow: hidden !important;
+}
+.position-relative {
+    position: relative !important;
+}
+.flex-auto {
+    flex: auto !important;
+}
+.flex-column {
+    flex-direction: column !important;
+}
+.home-hero-glow {
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    transform: translate(-50%, -50%);
+}
+.events-none{
+	pointer-events: none;
+}
+.overflow-hidden{
+	overflow: hidden !important;
+}
+.position-absolute {
+	position: absolute !important;
+}
+.main-container_s1 img {
+	border-style: none;
+}
+
 @media screen and (max-width: 800px){
 	#menu {position:relative}
 	#menu ul {background:#111;position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none}

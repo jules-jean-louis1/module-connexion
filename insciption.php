@@ -40,6 +40,7 @@ if ($_POST['password']) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles_inscritpion.css">
     <title>co.com</title>
 </head>
 <body>
@@ -49,15 +50,16 @@ if ($_POST['password']) {
                     <div class="module_container">  <!-- Zone de connection -->
                         <form action="" method="post" class="form_">
                             <h2>S'inscrire</h2>
-                            <input type="text" name="fname" id="fname" placeholder="Prénom">
-                            <input type="text" name="lname" id="lname" placeholder="Nom">
+                            <input type="text" name="fname" id="log" placeholder="Prénom">
+                            <input type="text" name="lname" id="log" placeholder="Nom">
                             <input type="text" name="username" id="log" placeholder="Nom d'utilisateur">
                             <input type="text" name="password" id="log" placeholder="Mot de passe">
                             <input type="submit" value="S'inscrire" id="submit" name="envoyer">
                             <?php
                                $sql = "INSERT INTO connexion (login, nom, prenom, password) VALUES ('$login','$prenom','$nom','$password')";
                                if (mysqli_query($conn, $sql)) {
-                                   echo "New record created successfully";
+                                   echo "Votre compte a était crée";
+                                   #header locztion vers page
                                } else {
                                    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                                }

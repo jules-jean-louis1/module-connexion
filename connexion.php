@@ -3,7 +3,7 @@ session_start();
 /* connetion de la base de donnée phpmyadmin */
 $mysqli = new mysqli("localhost","root","","moduleconnexion");
 
-$result = mysqli_query($mysqli,"SELECT * FROM `connexion`");
+$result = mysqli_query($mysqli,"SELECT login password FROM moduleconnexion.connexion");
 $row = $result->fetch_all();
 $_SESSION['login'] = $row[0][1];
 $_SESSION['password'] = $row[0][4];
@@ -15,7 +15,14 @@ $_SESSION['password'] = $row[0][4];
     echo $_POST['name'];
     # code...
 } */
-
+for ($i=0; isset($row[$i]) ; $i++) { 
+    for ($j=1; isset($row[$i][$j]) ; $j++) 
+    { 
+       if ($_POST['username'] === $row[$i][$j] || $_POST['password'] === $row[$i][$j] ) {
+        echo "Bienvenu";
+       }
+    }
+}
 
 ?>
 

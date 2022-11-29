@@ -11,26 +11,6 @@ $row = $result->fetch_all(); */
 /* INSERT INTO connexion (login,prenom,nom,password) VALUES ($login,$prenom,$nom,$password)
  */
 
-if ($_POST['fname']) {
-    $prenom = $_POST['fname'];
-} else {
-    echo "Prenom non reçu";
-}
-if ($_POST['lname']) {
-    $nom = $_POST['lname'];
-} else {
-    echo "Nom non reçu";
-}
-if ($_POST["username"]) {
-    $login = $_POST["username"];
-} else {
-    echo "Login non reçu";
-}
-if ($_POST['password']) {
-    $password = $_POST['password'];
-} else {
-    echo "MdP non reçu";
-}
 
 
 ?>
@@ -94,6 +74,34 @@ if ($_POST['password']) {
                                 <input type="text" name="username" id="log" placeholder="Nom d'utilisateur">
                                 <input type="text" name="password" id="log" placeholder="Mot de passe">
                                 <input type="submit" value="S'inscrire" id="submit" name="envoyer">
+                                <?php
+                                $nom ="";
+                                $prenom ="";
+                                $login ="";
+                                $password ="";
+                                
+                                if (isset($_POST['fname'])) {
+                                    $prenom = $_POST['fname'];
+                                } else {
+                                    echo "Prenom non reçu";
+                                }
+                                if (isset($_POST['lname'])) {
+                                    $nom = $_POST['lname'];
+                                } else {
+                                    echo "Nom non reçu";
+                                }
+                                if (isset($_POST["username"])) {
+                                    $login = $_POST["username"];
+                                } else {
+                                    echo "Login non reçu";
+                                }
+                                if (isset($_POST['password'])) {
+                                    $password = $_POST['password'];
+                                } else {
+                                    echo "MdP non reçu";
+                                }
+                                
+                                ?>
                                 <?php
                                    $sql = "INSERT INTO connexion (login, nom, prenom, password) VALUES ('$login','$prenom','$nom','$password')";
                                    if (mysqli_query($conn, $sql)) {

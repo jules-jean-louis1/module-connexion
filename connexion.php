@@ -5,8 +5,6 @@ $mysqli = new mysqli("localhost","root","","moduleconnexion");
 
 $result = mysqli_query($mysqli,"SELECT login password FROM moduleconnexion.connexion");
 $row = $result->fetch_all();
-$_SESSION['login'] = $row[0][1];
-$_SESSION['password'] = $row[0][4];
 
 /* Tester si le login et le password se situe dans la base de donnée */
 
@@ -18,7 +16,7 @@ $_SESSION['password'] = $row[0][4];
 for ($i=0; isset($row[$i]) ; $i++) { 
     for ($j=1; isset($row[$i][$j]) ; $j++) 
     { 
-       if ($_POST['username'] === $row[$i][$j] || $_POST['password'] === $row[$i][$j] ) {
+       if (isset($_POST['username']) === $row[$i][$j] || isset($_POST['password']) === $row[$i][$j] ) {
         echo "Bienvenu";
        }
     }

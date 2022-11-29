@@ -292,7 +292,8 @@ label {
     display: flex;
     justify-content: flex-start;
     margin-right: 108px;
-    color: #627597;
+    /* color: #627597; */
+	color: #fff;
 	font-size: 16px;
 	font-weight: 500;
 }
@@ -319,14 +320,14 @@ label {
     background-color: transparent;
     width: 470px;
     height: 33px;
-    color: #707274;
+    color: #c9cccf;
     font-size: 16px;
 }
 ::placeholder {
     padding-left: 10px;
 }
 #text_membre {
-	color: #627597;
+	color: #c9cccf;
 }
 #text_membre a:visited{
 	color: #00cfc8;

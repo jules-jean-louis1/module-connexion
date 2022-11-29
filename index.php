@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="logo_l">
-                    <div class="container_logo">
+                    <div class="container_logo" style="padding-right: 50px;">
                         <img src="images/logo.svg" alt="">
                     </div>
                 </div>

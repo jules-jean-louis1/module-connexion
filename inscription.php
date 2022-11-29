@@ -21,7 +21,7 @@ $row = $result->fetch_all(); */
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles_inscritpion.css">
-    <title>co.com</title>
+    <title>inscription</title>
 </head>
 <body>
     <header>
@@ -46,7 +46,7 @@ $row = $result->fetch_all(); */
                     </div>
                 </div>
                 <div class="logo_l">
-                    <div class="container_logo">
+                    <div class="container_logo" style="padding-right: 50px;">
                         <img src="images/logo.svg" alt="">
                     </div>
                 </div>
@@ -79,38 +79,41 @@ $row = $result->fetch_all(); */
                                 $prenom ="";
                                 $login ="";
                                 $password ="";
-                                
-                                if (isset($_POST['fname'])) {
-                                    $prenom = $_POST['fname'];
-                                } else {
-                                    echo "Prenom non reçu";
-                                }
-                                if (isset($_POST['lname'])) {
-                                    $nom = $_POST['lname'];
-                                } else {
-                                    echo "Nom non reçu";
-                                }
-                                if (isset($_POST["username"])) {
-                                    $login = $_POST["username"];
-                                } else {
-                                    echo "Login non reçu";
-                                }
-                                if (isset($_POST['password'])) {
-                                    $password = $_POST['password'];
-                                } else {
-                                    echo "MdP non reçu";
+                                if (isset($_POST['envoyer'])) {
+                                    if (isset($_POST['fname'])) {
+                                        $prenom = $_POST['fname'];
+                                    } else {
+                                        echo "Prenom non reçu";
+                                    }
+                                    if (isset($_POST['lname'])) {
+                                        $nom = $_POST['lname'];
+                                    } else {
+                                        echo "Nom non reçu";
+                                    }
+                                    if (isset($_POST["username"])) {
+                                        $login = $_POST["username"];
+                                    } else {
+                                        echo "Login non reçu";
+                                    }
+                                    if (isset($_POST['password'])) {
+                                        $password = $_POST['password'];
+                                    } else {
+                                        echo "MdP non reçu";
+                                    }
                                 }
                                 
                                 ?>
                                 <?php
                                    $sql = "INSERT INTO connexion (login, nom, prenom, password) VALUES ('$login','$prenom','$nom','$password')";
-                                   if (mysqli_query($conn, $sql)) {
-                                       echo "Votre compte a était crée";
-                                       #header locztion vers page
-                                   } else {
-                                       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                                   if (isset($_POST['envoyer'])) {
+                                       if (mysqli_query($conn, $sql)) {
+                                           echo "Votre compte a était crée";
+                                           #header locztion vers page
+                                       } else {
+                                           echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                                       }
+                                       mysqli_close($conn);
                                    }
-                                   mysqli_close($conn);
                                 ?>
                             </form>
                             <p id="text_membre">Déjà membre ? <a href="">Se connecter</a></p>

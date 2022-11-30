@@ -1,30 +1,45 @@
 <?php
 session_start();
-/* connetion de la base de donnée phpmyadmin */
-$mysqli = new mysqli("localhost","root","","moduleconnexion");
-
-/* $result = mysqli_query($mysqli,"SELECT login password FROM moduleconnexion.connexion");
-$row = $result->fetch_all(); */
-
-/* Tester si le login et le password se situe dans la base de donnée */
+include 'acces_mysql.php';
 
 
-/* for ($i=0; isset($_POST['envoyer']) ; $i++) { 
-    echo $_POST['name'];
-    # code...
-} */
+$conn = mysqli_query($mysqli,"SELECT login, password, nom, prenom, id FROM moduleconnexion.connexion");
+$result = $conn->fetch_all();
 
-/* if (isset($_POST['envoyer'])) {
-    if (empty($_POST['login'])) {
-        echo "Le champs login n'est pas renseigner.";
-    }   else {
+// Le processus doit se declanché seulment si le bouton est cliqué
+
+if (isset($_POST['envoyer'])) {
+    // verifier que les champs sont bien remplie
+    if (empty($_POST['username'])) {   //possibilité de le faire avec isset === true pour verrifie que le champs est bien remplie
+        echo "Ce champs et vide";
+    } else {
         if (empty($_POST['password'])) {
-            echo "Le champs password n'est pas renseigner";
-        }   else {
+            echo "Ce champs et vide";
         }
     }
-} */
+      //faire que la boucle s'effectue pour le premiers tableau et pas les 'sous-tableau' avec le for $i
+    for ($i=0; isset($result[$i]) ; $i++) { 
+        if ($_POST['username'] === $result[$i][0] AND $_POST['password'] === $result[$i][1]){
+            $_SESSION['id'] = $result[$i][0];
+            $_SESSION['login'] = $_POST['username'];
+            $_SESSION['password'] = $_POST['password'];
+            $_SESSION['lname'] = $result[$i][2];
+            $_SESSION['fname'] = $result[$i][3];
+            echo 'Welcome ' . $_SESSION['login'] . '!';    
+            header('Location: compte.php'); 
+        } else {
+           
+        }
+    } 
+} else {
+    echo "Mdp ou login invalide";
+}
 
+if (isset($_POST['envoyer'])) {
+    if ($_POST['username'] === $result[0][0] AND $_POST['password'] === $result[0][0]) {
+        header('Location: http://localhost/connect/admin.php');
+    }
+}
 ?>
 
 
@@ -80,34 +95,6 @@ $row = $result->fetch_all(); */
                             <a href="">Login / Password oublié</a>
                             <input type="submit" value="Se connecter" id="submit" name="envoyer">
                         </form>
-                        <?php
-                            $conn = mysqli_query($mysqli,"SELECT login, password, nom, prenom, id FROM moduleconnexion.connexion");
-                            $result = $conn->fetch_all();
-
-                            if (isset($_POST['envoyer'])) {
-                                for ($i=0; isset($result[$i]) ; $i++) { 
-                                    if ($_POST['username'] === $result[$i][0] AND $_POST['password'] === $result[$i][1]){
-                                        $_SESSION['id'] = $result[$i][0];
-                                        $_SESSION['login'] = $_POST['username'];
-                                        $_SESSION['password'] = $_POST['password'];
-                                        $_SESSION['lname'] = $result[$i][2];
-                                        $_SESSION['fname'] = $result[$i][3];
-                                        echo 'Welcome ' . $_SESSION['login'] . '!';    
-                                        header('Location: compte.php'); 
-                                    } else {
-                                       
-                                    }
-                                } 
-                            } else {
-                                echo "Mdp ou login invalide";
-                            }
-                            
-                            if (isset($_POST['envoyer'])) {
-                                if ($_POST['username'] === $result[0][0] AND $_POST['password'] === $result[0][0]) {
-                                    header('Location: http://localhost/connect/admin.php');
-                                }
-                            }
-                        ?>
                         <p>Pas encore membre ? <a href="">S'inscrire</a></p>
                     </div>
                 </div>

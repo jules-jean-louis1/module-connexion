@@ -1,15 +1,6 @@
 <?php
-$servername = "localhost"; 
-$username = "root"; 
-$password = "";
-$database = "moduleconnexion";
+include 'acces_mysql.php';
 
-$conn = mysqli_connect($servername,$username,$password,$database);
-
-/* $result = mysqli_query($mysqli,"SELECT * FROM `connexion`");
-$row = $result->fetch_all(); */
-/* INSERT INTO connexion (login,prenom,nom,password) VALUES ($login,$prenom,$nom,$password)
- */
 $nom ="";
 $prenom ="";
 $login ="";

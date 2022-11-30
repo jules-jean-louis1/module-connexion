@@ -37,7 +37,7 @@ $row = $result->fetch_all(); */
     <title>co.com - Connexion</title>
 </head>
 <body>
-<header>
+    <header>
         <div class="navbar_">
             <div class="navbarsub">
                 <div class="navbar_r">
@@ -86,15 +86,18 @@ $row = $result->fetch_all(); */
                             <input type="submit" value="Se connecter" id="submit" name="envoyer">
                         </form>
                         <?php
-                            $conn = mysqli_query($mysqli,"SELECT login, password FROM moduleconnexion.connexion");
+                            $conn = mysqli_query($mysqli,"SELECT login, password, nom, prenom, id FROM moduleconnexion.connexion");
                             $result = $conn->fetch_all();
 
                             if (isset($_POST['envoyer'])) {
                                 for ($i=0; isset($result[$i]) ; $i++) { 
                                     if ($_POST['username'] === $result[$i][0] AND $_POST['password'] === $result[$i][1]){
+                                        $_SESSION['id'] = $result[$i][0];
                                         $_SESSION['login'] = $_POST['username'];
                                         $_SESSION['password'] = $_POST['password'];
-                                        echo 'Welcome ' . $_SESSION['login'] . '!';
+                                        $_SESSION['lname'] = $result[$i][2];
+                                        $_SESSION['fname'] = $result[$i][3];
+                                        echo 'Welcome ' . $_SESSION['login'] . '!';     
                                     } else {
                                        
                                     }

@@ -20,6 +20,37 @@ if (isset($_POST['envoyer'])) {
         $_SESSION['info_update'] ='Votre prénom a bien été modifier';
         header('location: compte.php');
     }
+    if (isset($_POST['change_mdp'])) 
+    {
+        $password = $_POST['change_mdp'];
+        $update_password = mysqli_query($mysqli,"UPDATE `connexion` SET `password` = '$password' WHERE `id` = '$id'");
+        $_SESSION['password'] = $password;
+        $_SESSION['info_update'] ='Votre prénom a bien été modifier';
+        header('location: compte.php');
+    }
+    if(isset($_POST['change_lname']))
+    {
+        $nom = $_POST['change_lname'];
+        $up_prenom = mysqli_query($mysqli,"UPDATE `connexion` SET `nom`= '$nom' WHERE `id`='$id'");
+        $_SESSION['lname'] = $nom;
+        $_SESSION['info_update'] ='Votre nom a bien été modifier';
+        header('location: compte.php');
+    }
+        //** UPDATE LOGIN */
+    if(isset($_POST['change_login']))
+    {
+        $login = $_POST['change_login'];
+    
+        $select = mysqli_query($mysqli, "SELECT * FROM `connexion` WHERE `login` = '$id'");
+        $result_login = mysqli_fetch_all($select);
+        if (count($result_login)!==0){
+            echo 'le nom d\'utilisateur existe déjà';
+        } else {
+            $up_prenom = mysqli_query($mysqli,"UPDATE `utilisateurs` SET `login`= '$login' WHERE `id`='$id'");
+            $_SESSION['login']=$login;
+            $_SESSION['info_update'] = 'Votre login a bien été modifier';
+        }
+    }
 }
 ?>
 <html lang="en">
@@ -72,7 +103,7 @@ if (isset($_POST['envoyer'])) {
                     <div class="module_container">
                         <form action="" method="post">
                             <div class="compte_title">
-                                <h2>Paramètres de compte utilisateur</h2>
+                                <h2>Paramètres du compte utilisateur</h2>
                                 <p>Vous pouvez ici effectuer des changements sur vos information personnels</p>
                             </div>
                             <label for=""><?php echo "Login :".$_SESSION['login'];?></label>
@@ -82,7 +113,7 @@ if (isset($_POST['envoyer'])) {
                             <label for=""><?php echo "Nom :".$_SESSION['lname'];?></label>
                             <input type="text" name="change_lname" id="log" placeholder="Changer de Nom">
                             <label for=""><?php echo "Password :".$_SESSION['password'];?></label>
-                            <input type="text" name="change_mdp" id="log" placeholder="Changer de Mots de passe">
+                            <input type="text" name="change_mdp" id="log" placeholder="Changer de Mot de passe">
                             <input type="submit" value="Effectuer les changements" name="submit_btn"  id="submit" >
                             <?php
                                 

@@ -45,14 +45,9 @@ $row = $result->fetch_all(); */
                         <nav id='menu'>
                             <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
                             <ul>
-                                <li><a href='http://'>Home</a></li>
+                                <li><a href='acceuil.php'>Home</a></li>
                                 <li><a href='http://'>About</a></li>
-                                <li><a class='dropdown-arrow' href='http://'>Compte</a>
-                                <ul class='sub-menus'>
-                                    <li><a href='http://'>Paramètres</a></li>
-                                    <li><a href='http://'>Inscription</a></li>
-                                    <li><a href='http://'>Connexion</a></li>
-                                </ul>
+                                <li><a class='dropdown-arrow' href='compte.php'>Compte</a>
                                 </li>
                             </ul>
                         </nav>
@@ -81,7 +76,7 @@ $row = $result->fetch_all(); */
                             <h2>Se connecter</h2>
                             <p>Vous devez être inscrit dans la base de données pour pouvoir vous authentifier.</p>
                             <input type="text" name="username" id="log" placeholder="Login">
-                            <input type="text" name="password" id="log" placeholder="Mot de passe">
+                            <input type="password" name="password" id="log" placeholder="Mot de passe">
                             <a href="">Login / Password oublié</a>
                             <input type="submit" value="Se connecter" id="submit" name="envoyer">
                         </form>
@@ -97,7 +92,8 @@ $row = $result->fetch_all(); */
                                         $_SESSION['password'] = $_POST['password'];
                                         $_SESSION['lname'] = $result[$i][2];
                                         $_SESSION['fname'] = $result[$i][3];
-                                        echo 'Welcome ' . $_SESSION['login'] . '!';     
+                                        echo 'Welcome ' . $_SESSION['login'] . '!';    
+                                        header('Location: compte.php'); 
                                     } else {
                                        
                                     }

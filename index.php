@@ -49,11 +49,24 @@
         <section class="main-container_s1">
             <div class="snow">
             </div>
+            <div class="title_main">
+                <h2>Module de Connexion</h2>
+            </div>
             <!-- <img src="images/hero-glow.svg" alt="Glowing" class="js-warp-hide position-absolute overflow-hidden home-hero-glow events-none"> -->
         </section>
     </main>
     <footer>
-
+            <div class="list_foot">
+                <div class="foot_warpper">
+                    <div class="list_f">
+                        <ul>
+                            <li><a class="foot_a" href="index.php">Acceuil</a></li>
+                            <li><a class="foot_a" href="inscription.php">S'inscrire</a></li>
+                            <li><a class="foot_a" href="connexion.php">Se connecter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
     </footer>
 </body>
 </html>

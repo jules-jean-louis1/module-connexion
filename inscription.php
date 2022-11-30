@@ -10,7 +10,43 @@ $conn = mysqli_connect($servername,$username,$password,$database);
 $row = $result->fetch_all(); */
 /* INSERT INTO connexion (login,prenom,nom,password) VALUES ($login,$prenom,$nom,$password)
  */
-
+$nom ="";
+$prenom ="";
+$login ="";
+$password ="";
+if (isset($_POST['envoyer'])) {
+    if (isset($_POST['fname'])) {
+        $prenom = $_POST['fname'];
+    } else {
+        echo "Prenom non reçu";
+    }
+    if (isset($_POST['lname'])) {
+        $nom = $_POST['lname'];
+    } else {
+        echo "Nom non reçu";
+    }
+    if (isset($_POST["username"])) {
+        $login = $_POST["username"];
+    } else {
+        echo "Login non reçu";
+    }
+    if (isset($_POST['password'])) {
+    $password = $_POST['password'];
+    } else {
+        echo "MdP non reçu";
+    }
+}
+                                
+    $sql = "INSERT INTO connexion (login, nom, prenom, password) VALUES ('$login','$prenom','$nom','$password')";
+        if (isset($_POST['envoyer'])) {
+            if (mysqli_query($conn, $sql)) {
+                echo "Votre compte a était crée";
+                header('Location: connexion.php');
+            } else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            }
+            mysqli_close($conn);
+        }
 
 
 ?>
@@ -72,51 +108,10 @@ $row = $result->fetch_all(); */
                                 <input type="text" name="fname" id="log" placeholder="Prénom">
                                 <input type="text" name="lname" id="log" placeholder="Nom">
                                 <input type="text" name="username" id="log" placeholder="Nom d'utilisateur">
-                                <input type="text" name="password" id="log" placeholder="Mot de passe">
+                                <input type="password" name="password" id="log" placeholder="Mot de passe">
                                 <input type="submit" value="S'inscrire" id="submit" name="envoyer">
-                                <?php
-                                $nom ="";
-                                $prenom ="";
-                                $login ="";
-                                $password ="";
-                                if (isset($_POST['envoyer'])) {
-                                    if (isset($_POST['fname'])) {
-                                        $prenom = $_POST['fname'];
-                                    } else {
-                                        echo "Prenom non reçu";
-                                    }
-                                    if (isset($_POST['lname'])) {
-                                        $nom = $_POST['lname'];
-                                    } else {
-                                        echo "Nom non reçu";
-                                    }
-                                    if (isset($_POST["username"])) {
-                                        $login = $_POST["username"];
-                                    } else {
-                                        echo "Login non reçu";
-                                    }
-                                    if (isset($_POST['password'])) {
-                                        $password = $_POST['password'];
-                                    } else {
-                                        echo "MdP non reçu";
-                                    }
-                                }
-                                
-                                ?>
-                                <?php
-                                   $sql = "INSERT INTO connexion (login, nom, prenom, password) VALUES ('$login','$prenom','$nom','$password')";
-                                   if (isset($_POST['envoyer'])) {
-                                       if (mysqli_query($conn, $sql)) {
-                                           echo "Votre compte a était crée";
-                                           #header locztion vers page
-                                       } else {
-                                           echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-                                       }
-                                       mysqli_close($conn);
-                                   }
-                                ?>
                             </form>
-                            <p id="text_membre">Déjà membre ? <a href="">Se connecter</a></p>
+                            <p id="text_membre">Déjà membre ? <a href="connexion.php">Se connecter</a></p>
                         </div>
                     </div>
                 </div>

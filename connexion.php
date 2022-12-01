@@ -1,42 +1,36 @@
 <?php
 session_start();
-include 'acces_mysql.php';
+/* connetion de la base de donnée phpmyadmin */
+$mysqli = new mysqli("localhost","root","","moduleconnexion");
 
 
 $conn = mysqli_query($mysqli,"SELECT login, password, nom, prenom, id FROM moduleconnexion.connexion");
 $result = $conn->fetch_all();
-
-// Le processus doit se declanché seulment si le bouton est cliqué
+$message = '';
 
 if (isset($_POST['envoyer'])) {
-    // verifier que les champs sont bien remplie
-    if (empty($_POST['username'])) {   //possibilité de le faire avec isset === true pour verrifie que le champs est bien remplie
-        echo "Ce champs et vide";
-    } else {
-        if (empty($_POST['password'])) {
-            echo "Ce champs et vide";
-        }
+    if (!empty(isset($_POST['username'])) && !empty(isset($_POST['password']))) {
+        $message = 'Champs vide';
+        
     }
-      //faire que la boucle s'effectue pour le premiers tableau et pas les 'sous-tableau' avec le for $i
     for ($i=0; isset($result[$i]) ; $i++) { 
         if ($_POST['username'] === $result[$i][0] AND $_POST['password'] === $result[$i][1]){
-            $_SESSION['id'] = $result[$i][0];
+            $_SESSION['id'] = $result[$i][4];
             $_SESSION['login'] = $_POST['username'];
             $_SESSION['password'] = $_POST['password'];
             $_SESSION['lname'] = $result[$i][2];
-            $_SESSION['fname'] = $result[$i][3];
-            echo 'Welcome ' . $_SESSION['login'] . '!';    
-            header('Location: compte.php'); 
+            $_SESSION['fname'] = $result[$i][3];   
+            header('Location: profil.php'); 
         } else {
-           
+           $message = "Mdp ou login invalide";
         }
     } 
 } else {
-    echo "Mdp ou login invalide";
+
 }
 
 if (isset($_POST['envoyer'])) {
-    if ($_POST['username'] === $result[0][0] AND $_POST['password'] === $result[0][0]) {
+    if ($_POST['username'] === $result[0][0] AND $_POST['password'] === $result[0][1]) {
         header('Location: http://localhost/connect/admin.php');
     }
 }
@@ -60,9 +54,9 @@ if (isset($_POST['envoyer'])) {
                         <nav id='menu'>
                             <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
                             <ul>
-                                <li><a href='acceuil.php'>Home</a></li>
+                                <li><a href='http://'>Home</a></li>
                                 <li><a href='http://'>About</a></li>
-                                <li><a class='dropdown-arrow' href='compte.php'>Compte</a>
+                                <li><a class='dropdown-arrow' href=''>Compte</a>
                                 </li>
                             </ul>
                         </nav>
@@ -95,6 +89,7 @@ if (isset($_POST['envoyer'])) {
                             <a href="">Login / Password oublié</a>
                             <input type="submit" value="Se connecter" id="submit" name="envoyer">
                         </form>
+                            <? echo $message;?>
                         <p>Pas encore membre ? <a href="">S'inscrire</a></p>
                     </div>
                 </div>
@@ -103,3 +98,5 @@ if (isset($_POST['envoyer'])) {
     </main>
 </body>
 </html>
+
+

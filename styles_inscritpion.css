@@ -156,52 +156,7 @@ html {
 .main-container_s1{
 	height: 100vh;
 }
-.snow{
-	height: 100vh;
-}
-.snow, .snow:after, .snow:before {
-	content: "";
-	position: absolute;
-	top: 40px;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-image: radial-gradient(4px 4px at 100px 50px, #fff, transparent);
-	background-image: radial-gradient(6px 6px at 100px 50px, #fff, transparent);
-	background-image: radial-gradient(3px 3px at 400px 250px, #fff, transparent);
-	background-image: radial-gradient(4px 4px at 400px 350px, #fff, transparent);
-	background-image: radial-gradient(6px 6px at 500px 100px, #fff, transparent);
-	background-image: radial-gradient(3px 3px at 50px 200px, #fff, transparent);
-	background-image: radial-gradient(4px 4px at 150px 300px, #fff, transparent);
-	background-image: radial-gradient(6px 6px at 250px 50px, #fff, transparent);
-	background-image: radial-gradient(3px 3px at 350px 50px, #fff, transparent);
-	background-size: 650px 650px;
 
-	animation: snowAnim 3s linear;
-	animation-iteration-count: infinite;
-}
-.snow:after {
-	margin-left: -250px;
-	opacity: 0.5;
-	filter: blur(2px);
-	animation-direction: reverse;
-	animation-duration: 6s;
-}
-.snow:before {
-	margin-left: -350px;
-	opacity: 0.7;
-	filter: blur(1px);
-	animation-direction: reverse;
-	animation-duration: 9s;
-}
-@keyframes snowAnim {
-	form{
-		transform: translateY(0);
-	}
-	to{
-		transform: translateY(-650px);
-	}
-}
 .d-flex {
     display: flex !important;
 }

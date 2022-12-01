@@ -33,42 +33,43 @@ session_start();
                     </div>
                 </div>
                 <div class="logo_l">
-                    <div class="container_logo" style="padding-right: 50px;">
-                        <img src="images/logo.svg" alt="">
-                    </div>
+                    <div class="container_logo">
+                    	<img src="images/logo.png" alt=""/> 
+					</div>
                 </div>
                 <div id="menu" class="color_btn">
                     <ul>
-                        <li><button class="btn_inscri"><a href='inscription.php'>Inscription</a></button></li>
+                        <li><button class="btn_inscri"><a href='inscription.php' style="padding-left: 10;">Inscription</a></button></li>
                         <li><button class="btn_co"><a href='connexion.php'>Connexion</a></button></li>
                     </ul>
                 </div>
             </div>
         </div>
-    </header>
+    <img src="images/header.png" width="1920" height="50" alt=""/> 
+	</header>
     <main class="js-warp-hide bg-gray-dark-mktg d-flex flex-auto flex-column overflow-hidden position-relative">
         <section class="main-container_s1">
-            <div class="snow">
-            </div>
             <div class="title_main">
-                <h2>Module de Connexion</h2>
+				<img src="images/button-submit-home.svg" alt=""/>
+				<h2>Module de Connexion</h2>
                 <? include 'deconnexion.php';?>
             </div>
             <!-- <img src="images/hero-glow.svg" alt="Glowing" class="js-warp-hide position-absolute overflow-hidden home-hero-glow events-none"> -->
         </section>
     </main>
     <footer>
-            <div class="list_foot">
-                <div class="foot_warpper">
-                    <div class="list_f">
-                        <ul>
-                            <li><a class="foot_a" href="index.php">Acceuil</a></li>
-                            <li><a class="foot_a" href="inscription.php">S'inscrire</a></li>
-                            <li><a class="foot_a" href="connexion.php">Se connecter</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+	<img src="images/footer.png" width="1920" height="50" alt=""/>
+	<div class="foot_nav">
+	  <div class="foot_warpper">
+		  <div class="foot_container">
+			  <ul id="list_foot">
+				  <li><button class="btn_footer1"><a href="inscription.php">Inscription</a></button></li>
+				  <li><button class="btn_footer"><a href="inscription.php">Connexion</a></button></li>
+				  <li><button class="btn_footer2"><a href="inscription.php">Profil</a></button></li>
+			  </ul>
+		  </div>
+      </div>
+    </div>
     </footer>
 </body>
 </html>

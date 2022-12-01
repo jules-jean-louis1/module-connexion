@@ -1,4 +1,7 @@
-<!--  Page d'acceuil -->
+<?php
+session_start();
+
+?>
 
 
 <html lang="fr">
@@ -6,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles_index.css">
+    <link rel="stylesheet" href="style_index.css">
     <title>presentation - acceuil</title>
 </head>
 <body>
@@ -22,9 +25,7 @@
                                 <li><a href='http://'>About</a></li>
                                 <li><a class='dropdown-arrow' href='http://'>Compte</a>
                                 <ul class='sub-menus'>
-                                    <li><a href='http://'>Paramètres</a></li>
-                                    <li><a href='http://'>Inscription</a></li>
-                                    <li><a href='http://'>Connexion</a></li>
+                                    <li><a href="profil.php"><? $_SEESION['login']?></a></li>
                                 </ul>
                                 </li>
                             </ul>
@@ -38,8 +39,8 @@
                 </div>
                 <div id="menu" class="color_btn">
                     <ul>
-                        <li><button class="btn_inscri"><a href='http://localhost/connect/inscription.php'>Inscription</a></button></li>
-                        <li><button class="btn_co"><a href='http://localhost/connect/connexion.php'>Connexion</a></button></li>
+                        <li><button class="btn_inscri"><a href='inscription.php'>Inscription</a></button></li>
+                        <li><button class="btn_co"><a href='connexion.php'>Connexion</a></button></li>
                     </ul>
                 </div>
             </div>
@@ -51,6 +52,7 @@
             </div>
             <div class="title_main">
                 <h2>Module de Connexion</h2>
+                <? include 'deconnexion.php';?>
             </div>
             <!-- <img src="images/hero-glow.svg" alt="Glowing" class="js-warp-hide position-absolute overflow-hidden home-hero-glow events-none"> -->
         </section>

@@ -21,8 +21,8 @@ session_start();
                         <nav id='menu'>
                             <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
                             <ul>
-                                <li><a href='http://'>Acceuil</a></li>
-                                <li><a href='http://'>Profil</a></li>
+                                <li><a href='index.php'>Acceuil</a></li>
+                                <li><a href='profil.php'>Profil</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -34,7 +34,11 @@ session_start();
                 </div>
                 <div id="menu" class="color_btn">
                     <ul>
-                        <li><button class="btn_inscri"><a href='inscription.php' style="padding-left: 10;">Inscription</a></button></li>
+                        <li class="btn_inscri">
+                            <form action="index.php" class="form01">
+                                <input type="submit" value="Deconnexion" name="logout">
+                            </form>
+                        </li>
                         <li><button class="btn_co"><a href='connexion.php'>Connexion</a></button></li>
                     </ul>
                 </div>
@@ -53,18 +57,18 @@ session_start();
         </section>
     </main>
     <footer>
-	<img src="images/footer.png" width="1920" height="50" alt=""/>
-	<div class="foot_nav">
-	  <div class="foot_warpper">
-		  <div class="foot_container">
-			  <ul id="list_foot">
-				  <li><button class="btn_footer1"><a href="inscription.php">Inscription</a></button></li>
-				  <li><button class="btn_footer"><a href="inscription.php">Connexion</a></button></li>
-				  <li><button class="btn_footer2"><a href="inscription.php">Profil</a></button></li>
-			  </ul>
-		  </div>
-      </div>
-    </div>
+        <img src="images/footer.png" width="1920" height="50" alt=""/>
+        <div class="foot_nav">
+            <div class="foot_warpper">
+                <div class="foot_container">
+                    <ul id="list_foot">
+                        <li><button class="btn_footer1"><a href="inscription.php">Inscription</a></button></li>
+                        <li><button class="btn_footer"><a href="connexion.php">Connexion</a></button></li>
+                        <li><button class="btn_footer2"><a href="profil.php">Profil</a></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

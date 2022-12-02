@@ -30,13 +30,13 @@ if (isset($_POST['envoyer'])) {
                                 
     $sql = "INSERT INTO connexion (login, nom, prenom, password) VALUES ('$login','$prenom','$nom','$password')";
         if (isset($_POST['envoyer'])) {
-            if (mysqli_query($conn, $sql)) {
+            if (mysqli_query($mysqli, $sql)) {
                 echo "Votre compte a était crée";
                 header('Location: connexion.php');
             } else {
-                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);
             }
-            mysqli_close($conn);
+            mysqli_close($mysqli);
         }
 
 
@@ -79,8 +79,8 @@ if (isset($_POST['envoyer'])) {
                 </div>
                 <div id="menu" class="color_btn">
                     <ul>
-                        <li><button class="btn_inscri"><a href='http://localhost/connect/inscription.php'>Inscription</a></button></li>
-                        <li><button class="btn_co"><a href='http://localhost/connect/connexion.php'>Connexion</a></button></li>
+                        <li><button class="btn_inscri"><a href='inscription.php'>Inscription</a></button></li>
+                        <li><button class="btn_co"><a href='connexion.php'>Connexion</a></button></li>
                     </ul>
                 </div>
             </div>

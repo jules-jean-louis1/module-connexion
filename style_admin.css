@@ -142,16 +142,13 @@ main {
 	width: 108px;
 	border: none;
 	height: 45px;
-	font-family: 'Chakra Petch', sans-serif;
-	font-weight: 700;
 }
 .form01 input {
 	background: transparent;
 	font-weight: 700;
 	border: 0;
 	padding-top: 10px;
-	font-family: 'Chakra Petch', sans-serif;
-	font-weight: 700;
+	color: #fff;
 }
 .btn_co {
     background: url("images/button_header.svg") no-repeat;
@@ -190,32 +187,44 @@ main.position-relative {
 .module_container {
     height: 516px;
     width: 700px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
 .module_connect {
 	background: url(images/form-post-bg.png) no-repeat;
 }
-form.form_ {
-    padding: 35px;
+.count_user {
+	color: #fff;
+	font-family: 'Rajdhani', sans-serif;
+	font-size: 18px;
+}
+table {
+    padding: 25px;
     display: flex;
     flex-direction: column;
-    height: 430px;
     justify-content: space-between;
-}
-form h2 {
-	font-family: 'Chakra Petch', sans-serif;
-	color: #fff;
-	font-size: 26px;
-}
-form p {
 	font-family: 'Rajdhani', sans-serif;
 	font-size: 18px;
 	color: #fff;
 }
-input {
-	font-family: 'Rajdhani', sans-serif;
-	color: #fff;
-	font-size: 18px;
-	padding-left: 5px;
+tbody {
+    padding: 6px;
+    border: 2px solid;
+}
+thead {
+    background: #00f0ff;
+    padding: 10px;
+	color: #000000;
+}
+th {
+	padding: 5px;
+
+}
+td {
+	padding: 5px;
 }
 #submit:hover{
 	background: #00f0ff;
@@ -252,6 +261,12 @@ a:visited.linkconnect {
 	font-weight: 700;
 	font-size: 18px;
 	color: #000000;
+}
+.form01 input {
+	background: transparent;
+	font-weight: 700;
+	border: 0;
+	padding-top: 10px;
 }
 
 /******************************* Footer *********************/

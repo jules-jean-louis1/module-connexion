@@ -46,7 +46,7 @@ if (isset($_POST['envoyer'])) {
     <title>co.com - Connexion</title>
 </head>
 <body>
-    <header>
+<header>
         <div class="navbar_">
             <div class="navbarsub">
                 <div class="navbar_r">
@@ -54,29 +54,28 @@ if (isset($_POST['envoyer'])) {
                         <nav id='menu'>
                             <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
                             <ul>
-                                <li><a href='http://'>Home</a></li>
-                                <li><a href='http://'>About</a></li>
-                                <li><a class='dropdown-arrow' href=''>Compte</a>
-                                </li>
+                                <li><a href='http://'>Acceuil</a></li>
+                                <li><a href='http://'>Profil</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
                 <div class="logo_l">
-                    <div class="container_logo" style="padding-right: 50px;">
-                        <img src="images/logo.svg" alt="">
-                    </div>
+                    <div class="container_logo">
+                    	<img src="images/logo.png" alt=""/> 
+					</div>
                 </div>
                 <div id="menu" class="color_btn">
                     <ul>
-                        <li><button class="btn_inscri"><a href='http://localhost/connect/inscription.php'>Inscription</a></button></li>
-                        <li><button class="btn_co"><a href='http://localhost/connect/connexion.php'>Connexion</a></button></li>
+                        <li><button class="btn_inscri"><a href='inscription.php' style="padding-left: 10;">Inscription</a></button></li>
+                        <li><button class="btn_co"><a href='connexion.php'>Connexion</a></button></li>
                     </ul>
                 </div>
             </div>
         </div>
-    </header>
-    <main>
+    <img src="images/header.png" width="1920" height="50" alt=""/> 
+	</header>
+    <main class="position-relative">
         <section class="s1_connect">
             <div class="module_connect">
                 <div class="module_warpper">
@@ -86,16 +85,29 @@ if (isset($_POST['envoyer'])) {
                             <p>Vous devez être inscrit dans la base de données pour pouvoir vous authentifier.</p>
                             <input type="text" name="username" id="log" placeholder="Login">
                             <input type="password" name="password" id="log" placeholder="Mot de passe">
-                            <a href="">Login / Password oublié</a>
                             <input type="submit" value="Se connecter" id="submit" name="envoyer">
-                        </form>
                             <? echo $message;?>
-                        <p>Pas encore membre ? <a href="">S'inscrire</a></p>
+                            <p>Pas encore membre ? <a href="" class="linkconnect">S'inscrire</a></p>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <footer>
+        <img src="images/footer.png" width="1920" height="50" alt=""/>
+        <div class="foot_nav">
+            <div class="foot_warpper">
+                <div class="foot_container">
+                    <ul id="list_foot">
+                        <li><button class="btn_footer1"><a href="inscription.php">Inscription</a></button></li>
+                        <li><button class="btn_footer"><a href="inscription.php">Connexion</a></button></li>
+                        <li><button class="btn_footer2"><a href="inscription.php">Profil</a></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
 

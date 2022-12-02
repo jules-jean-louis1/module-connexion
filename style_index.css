@@ -20,6 +20,10 @@ html {
     -webkit-text-size-adjust: 100%;
 
 }
+button, button:focus, button:hover, button:active {
+    outline: none;
+    box-shadow:none;
+}
 /***#############################    HEADER     ####################################***/
 /*#####################################################################################/
 ######################################################################################*/
@@ -129,6 +133,7 @@ html {
     text-transform: capitalize;
 	flex: 0 0 auto;
 	width: 108px;
+	border: none;
 }
 .btn_co {
     background: url("images/button_header.svg") no-repeat;
@@ -136,6 +141,7 @@ html {
     color: #111;
 	flex: 0 0 auto;
 	width: 108px;
+	border: none;
 }
 .btn_co a {
     color: #FFFFFF;
@@ -151,7 +157,6 @@ html {
 }
 .container_logo img {
 	width: 50px;
-	padding-right: 64px;
 }
 
 main.js-warp-hide.bg-gray-dark-mktg.d-flex.flex-auto.flex-column.overflow-hidden.position-relative {
@@ -181,7 +186,10 @@ main.js-warp-hide.bg-gray-dark-mktg.d-flex.flex-auto.flex-column.overflow-hidden
 }
 
 
-
+footer {
+	position: fixed;
+	bottom: 0;
+}
 .foot_container {
     margin-left: 50px;
     margin-right: 50px;
@@ -215,6 +223,7 @@ footer a:visited {
 	font-weight: 700;
 	text-transform: uppercase;
 	border: 2px solid black;
+	border: none;
 }
 .btn_footer1 {
     height: 45px;
@@ -224,6 +233,7 @@ footer a:visited {
 	font-weight: 700;
 	clip-path: polygon(19% 0, 80% 0%, 100% 0, 100% 100%, 80% 100%, 16% 100%, 0 100%, 0 42%);
 	text-transform: uppercase;
+	border: none;
 }
 .btn_footer2 {
     height: 45px;
@@ -233,6 +243,7 @@ footer a:visited {
 	font-weight: 700;
 	clip-path: polygon(19% 0, 80% 0%, 100% 0, 100% 77%, 80% 100%, 16% 100%, 0 100%, 0 0);
 	text-transform: uppercase;
+	border: none;
 }
 
 @media screen and (max-width : 1842px ){

@@ -21,13 +21,8 @@ session_start();
                         <nav id='menu'>
                             <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
                             <ul>
-                                <li><a href='http://'>Home</a></li>
-                                <li><a href='http://'>About</a></li>
-                                <li><a class='dropdown-arrow' href='http://'>Compte</a>
-                                <ul class='sub-menus'>
-                                    <li><a href="profil.php"><? $_SEESION['login']?></a></li>
-                                </ul>
-                                </li>
+                                <li><a href='http://'>Acceuil</a></li>
+                                <li><a href='http://'>Profil</a></li>
                             </ul>
                         </nav>
                     </div>

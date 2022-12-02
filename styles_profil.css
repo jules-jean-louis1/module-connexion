@@ -187,7 +187,7 @@ form.form_ {
     padding: 35px;
     display: flex;
     flex-direction: column;
-    height: 370px;
+    height: 430px;
     justify-content: space-between;
 }
 form h2 {
@@ -205,6 +205,13 @@ input {
 	color: #fff;
 	font-size: 18px;
 	padding-left: 5px;
+}
+#submit:hover{
+	background: #00f0ff;
+}
+label {
+	font-family: 'Rajdhani', sans-serif;
+	color: #fff;	
 }
 a:link.linkconnect {
 	text-decoration: none;
@@ -233,9 +240,7 @@ a:visited.linkconnect {
 	font-family: 'Chakra Petch', sans-serif;
 	font-weight: 700;
 	font-size: 18px;
-}
-#submit:hover{
-	background: #00f0ff;
+	color: #000000;
 }
 
 /******************************* Footer *********************/

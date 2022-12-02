@@ -21,7 +21,7 @@ if (isset($_POST['submit_btn'])) {
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="styles_compte2.css">
+    <link rel="stylesheet" href="styles_profil.css">
     <title>compte</title>
 </head>
 <body>
@@ -33,39 +33,33 @@ if (isset($_POST['submit_btn'])) {
                         <nav id='menu'>
                             <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
                             <ul>
-                                <li><a href='http://'>Home</a></li>
-                                <li><a href='http://'>About</a></li>
-                                <li><a class='dropdown-arrow' href='http://'>Compte</a>
-                                <ul class='sub-menus'>
-                                    <li><a href='http://'>Paramètres</a></li>
-                                    <li><a href='http://'>Inscription</a></li>
-                                    <li><a href='http://'>Connexion</a></li>
-                                </ul>
-                                </li>
+                                <li><a href='http://'>Acceuil</a></li>
+                                <li><a href='http://'>Profil</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
                 <div class="logo_l">
-                    <div class="container_logo" style="padding-right: 50px;">
-                        <img src="images/logo.svg" alt="">
-                    </div>
+                    <div class="container_logo">
+                    	<img src="images/logo.png" alt=""/> 
+					</div>
                 </div>
                 <div id="menu" class="color_btn">
                     <ul>
-                        <li><button class="btn_inscri"><a href='inscription.php'>Inscription</a></button></li>
+                        <li><button class="btn_inscri"><a href='inscription.php' style="padding-left: 10;">Inscription</a></button></li>
                         <li><button class="btn_co"><a href='connexion.php'>Connexion</a></button></li>
                     </ul>
                 </div>
             </div>
         </div>
-    </header>
-    <main>
+    <img src="images/header.png" width="1920" height="50" alt=""/> 
+	</header>
+    <main class="position-relative">
         <section class="s1_connect">
             <div class="module_connect">
                 <div class="module_warpper">
                     <div class="module_container">
-                        <form action="" method="POST">
+                        <form action="" method="POST" class="form_">
                             <div class="compte_title">
                                 <h2>Paramètres du compte utilisateur</h2>
                                 <p>Vous pouvez ici effectuer des changements sur vos information personnels</p>
@@ -85,5 +79,19 @@ if (isset($_POST['submit_btn'])) {
             </div>
         </section>
     </main>
+    <footer>
+        <img src="images/footer.png" width="1920" height="50" alt=""/>
+        <div class="foot_nav">
+            <div class="foot_warpper">
+                <div class="foot_container">
+                    <ul id="list_foot">
+                        <li><button class="btn_footer1"><a href="inscription.php">Inscription</a></button></li>
+                        <li><button class="btn_footer"><a href="inscription.php">Connexion</a></button></li>
+                        <li><button class="btn_footer2"><a href="inscription.php">Profil</a></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

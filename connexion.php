@@ -1,7 +1,7 @@
 <?php
 session_start();
 /* connetion de la base de donnée phpmyadmin */
-$mysqli = new mysqli("localhost","root","","moduleconnexion");
+include 'connect.php';
 
 
 $conn = mysqli_query($mysqli,"SELECT login, password, nom, prenom, id FROM moduleconnexion.connexion");

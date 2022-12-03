@@ -1,8 +1,11 @@
 <?php
 session_start();
 include 'connect.php';
+?>
 
+<?php if($_SESSION['login'] === 'admin'){ ?>
 
+<?php
 $result = mysqli_query($mysqli,"SELECT * FROM connexion");
 $row = $result->fetch_all();
 $count = mysqli_query($mysqli,"SELECT COUNT(*) FROM `connexion`");
@@ -90,7 +93,7 @@ $compte = $count->fetch_all();
         </section>
     </main>
     <footer>
-        <img src="images/footer.png" width="1920" height="50" alt=""/>
+        <img id="foot_img" src="images/footer.png" width="1920" height="50" alt=""/>
             <div class="foot_nav">
             <div class="foot_warpper">
                 <div class="foot_container">
@@ -105,3 +108,5 @@ $compte = $count->fetch_all();
     </footer>
 </body>
 </html>
+
+<?php } else{header('location: index.php');} ?>

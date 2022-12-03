@@ -1,7 +1,13 @@
 <?php
 session_start();
 include 'connect.php';
+?>
 
+<?php   if($_SESSION['login'] === NULL){
+    header('location: index.php');
+} 
+?>
+<?php
 $conn = mysqli_query($mysqli,"SELECT * FROM `connexion`");
 $row = $conn->fetch_all();
 

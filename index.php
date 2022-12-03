@@ -34,11 +34,7 @@ session_start();
                 </div>
                 <div id="menu" class="color_btn">
                     <ul>
-                        <li class="btn_inscri">
-                            <form action="index.php" class="form01">
-                                <input type="submit" value="Deconnexion" name="logout">
-                            </form>
-                        </li>
+                    <li><button class="btn_inscri"><a href='connexion.php'>Inscription</a></button></li>
                         <li><button class="btn_co"><a href='connexion.php'>Connexion</a></button></li>
                     </ul>
                 </div>

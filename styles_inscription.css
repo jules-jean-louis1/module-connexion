@@ -31,7 +31,10 @@ button, button:focus, button:hover, button:active {
 /*#####################################################################################/
 ######################################################################################*/
 
-
+main {
+	position: fixed;
+	top: 0;
+}
 .navbar_{
     background-color: #07080e;
 }
@@ -86,7 +89,7 @@ button, button:focus, button:hover, button:active {
 #menu li a:hover {
 	opacity: 0.6;
 }
-#menu input#responsive-menu {
+#menu input {
 	display: none;
 	margin: 0;
 	padding: 0;
@@ -138,7 +141,6 @@ button, button:focus, button:hover, button:active {
 	flex: 0 0 auto;
 	width: 108px;
 	border: none;
-	height: 45px;
 }
 .btn_co {
     background: url("images/button_header.svg") no-repeat;
@@ -177,58 +179,43 @@ main.position-relative {
 .module_container {
     height: 516px;
     width: 700px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
 }
 .module_connect {
 	background: url(images/form-post-bg.png) no-repeat;
 }
-.count_user {
-	color: #fff;
-	font-family: 'Rajdhani', sans-serif;
-	font-size: 18px;
-}
-table {
-    padding: 25px;
+form.form_ {
+    padding: 35px;
     display: flex;
     flex-direction: column;
+    height: 370px;
     justify-content: space-between;
+}
+form h2 {
+	font-family: 'Chakra Petch', sans-serif;
+	color: #fff;
+	font-size: 26px;
+}
+form p {
 	font-family: 'Rajdhani', sans-serif;
 	font-size: 18px;
 	color: #fff;
 }
-tbody {
-    padding: 6px;
-    border: 2px solid;
-}
-thead {
-    background: #00f0ff;
-    padding: 10px;
-	color: #000000;
-}
-th {
-	padding: 5px;
-
-}
-td {
-	padding: 5px;
-}
-#submit:hover{
-	background: #00f0ff;
-}
-label {
+input {
 	font-family: 'Rajdhani', sans-serif;
-	color: #fff;	
+	color: #fff;
+	font-size: 18px;
+	padding-left: 5px;
 }
-a:link.linkconnect {
+a:link.linkconnect a:link#text_link_form {
 	text-decoration: none;
 	color: #00f0ff;
 }
-a:visited.linkconnect {
+a:visited.linkconnect a:visited#text_link_form {
 	color: #00f0ff;
+}
+a#text_link_form {
+	color: #00f0ff;
+	text-decoration: none;
 }
 #log {
 	height: 40px;
@@ -252,24 +239,15 @@ a:visited.linkconnect {
 	font-size: 18px;
 	color: #000000;
 }
-.form01 input {
-    background: transparent;
-    font-weight: 700;
-    border: 0;
-    padding-top: 10px;
-    padding-left: 4px;
-    font-size: 16px;
-    font-family: 'Chakra Petch', sans-serif;
+#submit:hover{
+	background: #00f0ff;
 }
+
 /******************************* Footer *********************/
 
 footer {
 	position: fixed;
 	bottom: 0;
-}
-img#foot_img {
-    position: relative;
-    top: 4px;
 }
 .foot_container {
     margin-left: 50px;

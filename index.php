@@ -34,7 +34,7 @@ session_start();
                 </div>
                 <div id="menu" class="color_btn">
                     <ul>
-                    <li><button class="btn_inscri"><a href='connexion.php'>Inscription</a></button></li>
+                    <li><button class="btn_inscri"><a href='inscription.php'>Inscription</a></button></li>
                         <li><button class="btn_co"><a href='connexion.php'>Connexion</a></button></li>
                     </ul>
                 </div>

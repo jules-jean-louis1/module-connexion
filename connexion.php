@@ -3,8 +3,8 @@ session_start();
 /* connetion de la base de donnée phpmyadmin */
 include 'connect.php';
 
-
-$conn = mysqli_query($mysqli,"SELECT login, password, nom, prenom, id FROM moduleconnexion.connexion");
+$sql = "SELECT login, password, nom, prenom, id FROM connexion";
+$conn = mysqli_query($mysqli,$sql);
 $result = $conn->fetch_all();
 $message = '';
 
@@ -31,7 +31,7 @@ if (isset($_POST['envoyer'])) {
 
 if (isset($_POST['envoyer'])) {
     if ($_POST['username'] === $result[0][0] AND $_POST['password'] === $result[0][1]) {
-        header('Location: http://localhost/connect/admin.php');
+        header('Location: admin.php');
     }
 }
 ?>
@@ -43,7 +43,7 @@ if (isset($_POST['envoyer'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles_connexion.css">
-    <title>co.com - Connexion</title>
+    <title>Connexion</title>
 </head>
 <body>
 <header>
